@@ -1,0 +1,11 @@
+<div class="restaurant_single mt-4 mb-4">
+  <h1><%= @restaurant.name %></h1>
+  <div class="mt-4">
+    <p>Address: <%=@restaurant.address %></p>
+    <p>Phone number: <%=@restaurant.phone_number %></p>
+    <p>Category: <%=@restaurant.category.capitalize %></p>
+  </div>
+  <h6><%= link_to "Edit",edit_restaurant_path(@restaurant) %></h6>
+  <h6><%= link_to "Back to homepage", restaurants_path %></h6>
+  <h6><%= link_to "leave a review",new_restaurant_review_path(@restaurant)  %></h6>
+</div>

@@ -1,0 +1,14 @@
+<div class="d-flex">
+  <h1>Restaurants</h1>
+  <h2><%=link_to "Add new restaurant", new_restaurant_path%></h2>
+</div>
+
+<div class="cards  mt-4 mb-4">
+  <ul>
+    <% @restaurants.each do|restaurant| %>
+    <div class="card_container mt-4 mb-4">
+      <li><%= link_to restaurant.name, restaurant_path(restaurant) %></li>
+    </div>
+    <% end %>
+  </ul>
+</div>
