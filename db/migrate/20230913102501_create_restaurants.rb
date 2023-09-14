@@ -1,4 +1,5 @@
 class CreateRestaurants < ActiveRecord::Migration[7.0]
+  has_many :reviews
   def change
     create_table :restaurants do |t|
       t.string :name
