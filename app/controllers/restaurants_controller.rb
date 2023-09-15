@@ -1,4 +1,5 @@
 class RestaurantsController < ApplicationController
+  before_action :find_id, only: [:show, :edit, :update]
   def index
     @restaurants = Restaurant.all
   end
@@ -17,15 +18,13 @@ class RestaurantsController < ApplicationController
   end
 
   def show
-    @restaurant = Restaurant.find(params[:id])
+    @review = Review.new
   end
 
   def edit
-    @restaurant = Restaurant.find(params[:id])
   end
 
   def update
-    @restaurant = Restaurant.find(params[:id])
     @restaurant.update(set_params)
     redirect_to restaurant_path(@restaurant)
   end
@@ -34,6 +33,10 @@ class RestaurantsController < ApplicationController
 
   def set_params
     params.require(:restaurant).permit(:name, :address, :phone_number, :category)
+  end
+
+  def find_id
+    @restaurant = Restaurant.find(params[:id])
   end
 
 end

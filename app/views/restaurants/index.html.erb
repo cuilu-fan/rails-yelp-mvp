@@ -1,14 +1,12 @@
-<div class="d-flex">
+<div class="d-flex mt-4 justify-content-between">
   <h1>Restaurants</h1>
-  <h2><%=link_to "Add new restaurant", new_restaurant_path%></h2>
+  <%=link_to "Add new restaurant", new_restaurant_path, class:"btn btn-primary"%>
 </div>
 
-<div class="cards  mt-4 mb-4">
-  <ul>
+<div class="cards-grid mt-4 mb-4">
     <% @restaurants.each do|restaurant| %>
     <div class="card_container mt-4 mb-4">
-      <li><%= link_to restaurant.name, restaurant_path(restaurant) %></li>
+    <%= link_to restaurant.name, restaurant_path(restaurant) %>
     </div>
     <% end %>
-  </ul>
 </div>

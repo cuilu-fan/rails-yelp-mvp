@@ -13,4 +13,12 @@
  *= require_tree .
  *= require_self
  */
-
+.cards-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 40px;
+}
+.card_container{
+  padding: 60px;
+  background-color: azure;
+}
